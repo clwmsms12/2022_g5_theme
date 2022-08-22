@@ -19,27 +19,11 @@ include_once(G5_THEME_PATH.'/head.php');
 <?php
 echo G5_THEME_PATH;
 echo "<br>";
-echo G5_THEME_IMG_URL;
-echo "<br>";
-echo G5_THEME_CSS_URL;
-echo "<br>";
-echo G5_THEME_JS_URL;
-echo "<br>";
+echo G5_THEME_IMG_URL."<BR>";
+echo G5_THEME_CSS_URL."<BR>";
+echo G5_THEME_JS_URL."<BR>";
 ?>
-<div class="wrap slideWrap">
-	<ul	class="slide">
-		<li>
-			<img src="<? echo G5_THEME_IMG_URL ?>/img1.jpg" alt="">
-			<img src="<? echo G5_THEME_IMG_URL ?>/img2.jpg" alt="">
-			<img src="<? echo G5_THEME_IMG_URL ?>/img3.jpg" alt="">
-			<img src="<? echo G5_THEME_IMG_URL ?>/img4.jpg" alt="">
-		</li>
-	</ul>
-</div>
 
-<script>
-	$(".slide").bxSlider()
-</script>
 
 
 <?php
