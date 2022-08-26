@@ -77,10 +77,55 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
 <hr>
 
+<style>
+    .visual{background: pink;height: 200px;display: flex;justify-content:center;align-items:center}
+    .visual h2{font-size:2em;}
+    .subTopBg_01{background: skyblue;}
+    .subTopBg_02{background: pink;}
+    .subTopBg_03{background: green;}
+    .subTopBg_04{background: blue;}
+
+</style>
+
 <!-- 콘텐츠 시작 { -->
 <div id="wrapper">
-    <div id="container_wr"  <?php if (!defined("_INDEX_")) { ?> style="width:100%"<?php } ?>>
-   
+
+    <?php if (!defined("_INDEX_")) { ?>
+        <style>
+            .visual{
+                background: pink;height: 200px;
+                display: flex;justify-content:center;align-items:center;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                color:white
+            }
+            .visual h2{font-size:2em;}
+            .subTopBg_01{background-image: url(<? echo G5_THEME_IMG_URL ?>/pc01.jpg);}
+            .subTopBg_02{background-image: url(<? echo G5_THEME_IMG_URL ?>/pc02.jpg);}
+            .subTopBg_03{background-image: url(<? echo G5_THEME_IMG_URL ?>/pc03.jpg);}
+            .subTopBg_04{background-image: url(<? echo G5_THEME_IMG_URL ?>/pc01.jpg);}
+        </style>
+        <div class="visual" id="page_title">
+            <div class="txtWrap">
+                <h2 class="loc1D"></h2>
+                <p class="txt">항상 저희 홈페이지를 찾아주셔서 감사합니다.</p>
+            </div>
+        </div>
+
+        <script>
+            window.onload = function(){
+                if($(".loc1D").html() == "모니모 소개"){
+                    $(".txtWrap > .txt").html("안녕하세요")
+                }
+                if($(".loc1D").html() == "공지사항"){
+                    $(".txtWrap > .txt").html("안녕하세요. 공지사항입니다.")
+                }
+            }
+        </script>
+    <? } ?>
+
+    <div id="container_wr"  <?php if (defined("_INDEX_")) { ?> style="width:100%"<?php } ?>>
     <div id="container">
         <?php if (!defined("_INDEX_")) { ?>
             <h2 id="container_title">
@@ -88,4 +133,4 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                     <?php echo get_head_title($g5['title']); ?>
                 </span>
             </h2>
-        <?php }
+        <?php } ?>
